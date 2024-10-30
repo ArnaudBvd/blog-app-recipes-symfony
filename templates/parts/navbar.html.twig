@@ -1,6 +1,6 @@
 <nav>
-	<div class="container-fluid nav__container">
-		<a href="index.html" class="nav__logo">
+	<div class="container nav__container">
+		<a href="{{ path('app_home') }}" class="nav__logo">
 			YUMMY
 		</a>
 		<ul class="nav__menu">
@@ -17,14 +17,18 @@
 				</li>
 			{% endif %}
 
+			<li>
+				<a href="#">Contact</a>
+			</li>
+			
 			{% if app.user is not null and app.user.hasRole("ROLE_ADMIN") %}
 				<li>
 					<a href="#">Admin</a>
 				</li>
 			{% endif %}
 		</ul>
-		<div class="nav__connection">
-			<ul>
+		<div>
+			<ul class="nav__connection">
 				{% if app.user is null %}
 					<li>
 						<a href="{{ path('app_login') }}">Se connecter</a>

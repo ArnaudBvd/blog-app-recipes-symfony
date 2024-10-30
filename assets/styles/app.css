@@ -135,7 +135,6 @@ nav {
     -o-backdrop-filter: blur(15px);
     -ms-backdrop-filter: blur(15px);
     z-index: 10;
-
 }
 
 .nav__container {
@@ -153,22 +152,18 @@ nav {
     font-weight: bold;
 }
 
-.nav__menu, .nav__connection ul {
+.nav__menu, .nav__connection {
     display: flex;
     align-items: center;
     gap: 3rem;
 }
 
-.nav__connection {
-    margin-left: 6.5rem;
-}
-
-.nav__menu a{
+.nav__menu a, .nav__connection a{
     color: var(--color-gray-900);
     font-size: 1rem;
 }
 
-.nav__toggle-open, .nav__toggle-close {
+.nav__buttons {
     display: none;
 }
 
