@@ -21,6 +21,7 @@
     --transition: all 300ms ease;
 
     --color-primary: #0de626;
+    --color-variant-primary: #0bb91f;
     --color-nav-bg: #ffffff66;
     --color-gray-100: #ffffff;
     --color-gray-200: #f2f2f2;
@@ -43,7 +44,7 @@ body {
 }
 
 p, a, figcaption {
-    font-size: 0.85rem;
+    font-size: 1rem;
 }
 
 .container {
@@ -72,9 +73,9 @@ h2 {
 }
 
 .btn {
-    background: var(--color-gray-200);
-    color: var(--color-gray-900);
-    font-weight: 500;
+    background: var(--color-primary);
+    color: var(--color-gray-100);
+    font-weight: 800;
     display: inline-block;
     padding: 1rem 2.5rem;
     border-radius: var(--radius-3);
@@ -94,10 +95,10 @@ h2 {
     color: #fff;
 }
 
-.btn:hover {
+/* .btn:hover {
     background: var(--color-gray-900);
-    color: var(--color-gray-100);
-}
+    color: var(--color-primary);
+} */
 
 section {
     padding: 9rem 0;
@@ -115,6 +116,10 @@ section > h1 {
 
 section:nth-child(odd) {
     background: var(--color-gray-200);
+}
+
+.alert {
+    color: #d11010;
 }
 
 
@@ -172,4 +177,56 @@ nav {
     background: transparent;
     font-size: 1.4rem;
     cursor: pointer;   
+}
+
+
+/* ================ LOGIN ================  */
+.login__container {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 3rem 2rem rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-4);
+}
+
+.login__form input{
+    background: transparent;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-3);
+    padding: 1rem;
+    color: var(--color-gray-700);
+    resize: none;
+}
+
+.login__form input::placeholder {
+    color: var(--color-gray-400);
+}
+
+.login__form h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.forgotten__password a {
+    text-decoration: underline;
+    color: var(--color-gray-900);
+}
+
+.link__form a{
+    color: var(--color-variant-primary);
+    font-weight: 400;
+}
+
+.btn__login {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }
