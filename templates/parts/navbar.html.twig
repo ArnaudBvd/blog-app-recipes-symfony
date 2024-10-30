@@ -1,0 +1,51 @@
+<nav>
+	<div class="container-fluid nav__container">
+		<a href="index.html" class="nav__logo">
+			YUMMY
+		</a>
+		<ul class="nav__menu">
+			<li>
+				<a href="{{ path('app_home') }}">Accueil</a>
+			</li>
+			<li>
+				<a href="#">Recettes</a>
+			</li>
+
+			{% if app.user is not null %}
+				<li>
+					<a href="#">Mes recettes</a>
+				</li>
+			{% endif %}
+
+			{% if app.user is not null and app.user.hasRole("ROLE_ADMIN") %}
+				<li>
+					<a href="#">Admin</a>
+				</li>
+			{% endif %}
+
+			{% if app.user is null %}
+				<li>
+					<a href="{{ path('app_login') }}">Se connecter</a>
+				</li>
+				<li>
+					<a href="#">S'enregistrer'</a>
+				</li>
+			{% endif %}
+
+			{% if app.user is not null %}
+				<li>
+					<a href="{{ path('app_logout') }}">Se déconnecter</a>
+				</li>
+			{% endif %}
+
+		</ul>
+		<div class="nav__buttons">
+			<button class="nav__toggle-open">
+				<i class="uil uil-bars"></i>
+			</button>
+			<button class="nav__toggle-close">
+				<i class="uil uil-multiply"></i>
+			</button>
+		</div>
+	</div>
+</nav>
