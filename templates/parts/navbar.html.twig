@@ -22,23 +22,25 @@
 					<a href="#">Admin</a>
 				</li>
 			{% endif %}
-
-			{% if app.user is null %}
-				<li>
-					<a href="{{ path('app_login') }}">Se connecter</a>
-				</li>
-				<li>
-					<a href="#">S'enregistrer'</a>
-				</li>
-			{% endif %}
-
-			{% if app.user is not null %}
-				<li>
-					<a href="{{ path('app_logout') }}">Se déconnecter</a>
-				</li>
-			{% endif %}
-
 		</ul>
+		<div class="nav__connection">
+			<ul>
+				{% if app.user is null %}
+					<li>
+						<a href="{{ path('app_login') }}">Se connecter</a>
+					</li>
+					<li>
+						<a href="#">S'enregistrer</a>
+					</li>
+				{% endif %}
+
+				{% if app.user is not null %}
+					<li>
+						<a href="{{ path('app_logout') }}">Se déconnecter</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
 		<div class="nav__buttons">
 			<button class="nav__toggle-open">
 				<i class="uil uil-bars"></i>
