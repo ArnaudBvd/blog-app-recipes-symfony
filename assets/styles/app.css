@@ -230,3 +230,92 @@ nav {
     justify-content: center;
     margin-top: 2rem;
 }
+
+
+/* ================ FOOTER ================  */
+footer {
+    background: var(--color-primary);
+    padding-top: 4rem;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre tout le contenu horizontalement */
+    /* gap: 2rem; */
+}
+
+.footer__menu {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.footer__menu a {
+    color: var(--color-gray-900);
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+.footer__menu a:hover {
+    color: var(--color-gray-100);
+}
+
+.footer__socials {
+    width: fit-content;
+    display: flex;
+    gap: 2.5rem;
+    margin: 2rem auto 2rem;    
+}
+
+.footer__socials a {
+    color: var(--color-gray-100);
+    font-size: 2rem;
+    display: flex;
+    transition: var(--transition);
+}
+
+.footer__socials a:hover {
+    color: var(--color-gray-900);
+}
+
+.contact__form {
+    /* margin-top: 1.5rem; */
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 40%;
+}
+
+.contact__form input, .contact__form textarea {
+    background: var(--color-gray-100);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-3);
+    padding: 1rem;
+    color: var(--color-gray-600);
+    font-weight: 400;
+    resize: none;    
+}
+
+.contact__form input::placeholder, .contact__form textarea::placeholder {
+    color: var(--color-gray-600);
+}
+
+.contact__btn {
+    display: flex;
+    justify-content: center;
+}
+
+.contact__btn .btn {
+    background-color: var(--color-gray-900);
+}
+
+.footer__copyright {
+    color: var(--color-gray-900);
+    font-weight: 400;
+    text-align: center;
+    border-top: 2px solid var(--color-gray-100);
+    padding: 1.5rem 0;
+}
