@@ -18,12 +18,12 @@
 			{% endif %}
 
 			<li>
-				<a href="#">Contact</a>
+				<a href="#contact">Contact</a>
 			</li>
 			
 			{% if app.user is not null and app.user.hasRole("ROLE_ADMIN") %}
 				<li>
-					<a href="#">Admin</a>
+					<a href="#">Administration</a>
 				</li>
 			{% endif %}
 		</ul>
