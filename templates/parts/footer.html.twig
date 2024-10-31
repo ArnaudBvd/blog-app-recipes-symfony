@@ -1,0 +1,27 @@
+<footer>
+	<div class="container footer__container">
+		<ul class="footer__menu">
+			<li>
+				<a href="{{ path('app_home') }}">Accueil</a>
+			</li>
+			<li>
+				<a href="#">Recettes</a>
+			</li>			
+			<li>
+				<a href="#contact">Contact</a>
+			</li>
+		</ul>
+		<div class="contact__form">
+			<form action="https://formsubmit.co/bravard.arnaud@gmail.com" method="post" class="contact__form">
+				<input type="text" name="Nom" placeholder="Nom">
+				<input type="text" name="Prénom" placeholder="Prénom">
+				<input type="email" name="Email" placeholder="Adresse mail">
+				<textarea rows="7" name="Message" placeholder="Votre message"></textarea>
+				<button type="submit" class="btn">Envoyer</button>
+			</form>
+		</div>
+	</div>
+	<div class="footer__copyright">
+		<small>2024 YUMMY &copy;</small>
+	</div>
+</footer>
