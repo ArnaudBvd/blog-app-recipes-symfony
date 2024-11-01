@@ -30,12 +30,54 @@ Une application de partage de recettes en ligne, développée avec Symfony, perm
 
 ## Installations et Configuration
 
+### Prérequis
+
+Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
+- PHP 8.1 ou supérieur
+- Composer
+- Symfony CLI
+- MySQL
+
+### Étapes d'installation
+
+1. **Cloner le dépot :**
+
+```bash
+git clone https://github.com/your_project/yummy-recipes.git
+cd yummy-recipes
+```
+
+2. Installer les dépendances
+
+```bash
+composer install
+```
+
+3. Configuration de l'environnement local :
+
+Créer un fichier **.env.local** à la racine du projet pour stocker les configurations locales (comme les identifiants de base de données)
+```makefile
+DATABASE_URL="mysql://username:password@127.0.0.1:3306/database_name"
+```
+
+Exécuter la commande pour créer la base de données :
+```bash
+symfony console doctrine:databse:create
+```
+
+4. Lancer l'application en local :
+
+```bash
+symfony serve
+```
+
 
 ## Fonctionnalités
 
 
 ## ToDo
 
+- [] Ajouter un système d'enregistrement d'utilisateurs
 - [] Intégrer un système de validation d'e-mail lors de l'inscription
 - [] Mettre en place la gestion des accès et la sécurisation des routes
 - [] Ajouter un système de recherche par mot-clés pour les recettes
