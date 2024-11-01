@@ -77,7 +77,7 @@ symfony serve
 
 ## ToDo
 
-- [] Ajouter un système d'enregistrement d'utilisateurs
+- [X] Ajouter un système d'enregistrement d'utilisateurs
 - [] Intégrer un système de validation d'e-mail lors de l'inscription
 - [] Mettre en place la gestion des accès et la sécurisation des routes
 - [] Ajouter un système de recherche par mot-clés pour les recettes
