@@ -5,8 +5,8 @@
 
 {% block body %}
 	<section class="login">
-		<div class="container login__container">
-			<form method="post" class="login__form">
+		<div class="container login-register__container">
+			<form method="post" class="login-register__form">
 				{% if error %}
 					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 				{% endif %}
@@ -47,7 +47,7 @@
 					</p>
 				</div>
 
-				<div class="btn__login">
+				<div class="btn__login-register">
 					<button class="btn" type="submit">
 						Se connecter
 					</button>

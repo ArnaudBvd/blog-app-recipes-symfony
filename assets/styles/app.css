@@ -82,6 +82,7 @@ h2 {
     width: fit-content;
     cursor: pointer;
     transition: var(--transition);
+    border: 2px solid transparent;
 }
 
 .btn.sm {
@@ -95,10 +96,11 @@ h2 {
     color: #fff;
 }
 
-/* .btn:hover {
-    background: var(--color-gray-900);
+.btn:hover {
+    background: var(--color-gray-100);
     color: var(--color-primary);
-} */
+    border: 2px solid var(--color-gray-900);
+}
 
 section {
     padding: 9rem 0;
@@ -181,23 +183,23 @@ nav {
 
 
 /* ================ LOGIN ================  */
-.login__container {
+.login-register__container {
     width: 70%;
     display: flex;
     align-items: center;
     justify-content: center;  
 }
 
-.login__form {
+.login-register__form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
     padding: 1.5rem;
     box-shadow: 0 3rem 2rem rgba(0, 0, 0, 0.1);
     border-radius: var(--radius-4);
 }
 
-.login__form input{
+.login-register__form input{
     background: transparent;
     border: 1px solid var(--color-gray-300);
     border-radius: var(--radius-3);
@@ -206,13 +208,13 @@ nav {
     resize: none;
 }
 
-.login__form input::placeholder {
+.login-register__form input::placeholder {
     color: var(--color-gray-400);
 }
 
-.login__form h1 {
+.login-register__form h1 {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
 }
 
 .forgotten__password a {
@@ -225,12 +227,30 @@ nav {
     font-weight: 400;
 }
 
-.btn__login {
+.btn__login-register {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
 }
 
+.register__form {
+    padding: 3rem;
+}
+
+.form-group label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.form-group input {
+    width: 100%;
+}
+
+.link__register {
+    margin-top: 1.5rem;
+}
 
 /* ================ FOOTER ================  */
 footer {
