@@ -79,6 +79,8 @@ symfony serve
 
 - [X] Ajouter un système d'enregistrement d'utilisateurs
 - [] Intégrer un système de validation d'e-mail lors de l'inscription
+- [] Ajouter une réinitialisation de mot de passe
+- [X] Ajouter l'avatar de l'utilisateur connecté dans la barre de navigation et mise en place d'un avatar par défaut
 - [] Mettre en place la gestion des accès et la sécurisation des routes
 - [] Ajouter un système de recherche par mot-clés pour les recettes
 - [] Implémenter un système de commentaires pour les recettes
