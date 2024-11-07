@@ -124,6 +124,13 @@ section:nth-child(odd) {
     color: #d11010;
 }
 
+.avatar__nav {
+    width: 3.2rem;
+    height: 3.2rem;
+    border: 2px solid var(--color-variant-primary);
+    border-radius: 50%;
+    object-fit: cover;
+}
 
 /* ================ NAV ================  */
 nav {
