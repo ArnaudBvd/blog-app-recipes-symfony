@@ -42,6 +42,9 @@
 					<li>
 						<a href="{{ path('app_logout') }}">Se déconnecter</a>
 					</li>
+					<li>
+						<img src="{{ app.user.avatar ?: asset('images/avatar_defaut.webp') }}" class="avatar__nav" alt="Avatar de {{ app.user.firstname }}"/>
+					</li>
 				{% endif %}
 			</ul>
 		</div>
