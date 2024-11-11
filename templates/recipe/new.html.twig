@@ -1,11 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Recipe{% endblock %}
+{% block title %}Nouvelle recette
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Recipe</h1>
 
-    {{ include('recipe/_form.html.twig') }}
+	<section class="add_recipe">
 
-    <a href="{{ path('app_recipe_index') }}">back to list</a>
+		<div class="container login-register__container">
+			<div class="login-register__form register__form">
+				<h1>Ajouter une recette</h1>
+
+				{{ form_start(form) }}
+				<div class="form-group">
+					{{ form_row(form.title) }}
+					{{ form_row(form.description) }}
+					{{ form_row(form.preparation_time) }}
+					{{ form_row(form.cooking_time) }}
+					{{ form_row(form.serving) }}
+					{{ form_row(form.difficulty) }}
+					{{ form_row(form.category) }}
+					{{ form_row(form.created_at) }}
+					{{ form_row(form.picture) }}
+				</div>
+
+
+				<div class="btn__login-register">
+					<button type="submit" class="btn">Ajouter une recette</button>
+				</div>
+
+				{{ form_end(form) }}
+
+				<div class="link__form link__register">
+					<a href="{{ path('app_recipe_index') }}">Retour à votre liste de recette</a>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
 {% endblock %}
