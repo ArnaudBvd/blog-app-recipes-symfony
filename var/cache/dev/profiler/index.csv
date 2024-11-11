@@ -108,3 +108,6 @@ d4a89d,127.0.0.1,GET,https://127.0.0.1:8000/recipe,1731351999,,200,request
 5d91bc,127.0.0.1,GET,https://127.0.0.1:8000/recipe/user1/myrecipes,1731352602,,200,request
 d38a68,127.0.0.1,GET,https://127.0.0.1:8000/recipe/new,1731352605,,200,request
 bd21d0,127.0.0.1,GET,https://127.0.0.1:8000/,1731352609,,200,request
+575c1e,127.0.0.1,GET,https://127.0.0.1:8000/recipe/user1/myrecipes,1731352868,,200,request
+9b4581,127.0.0.1,GET,https://127.0.0.1:8000/recipe/new,1731352876,,200,request
+be7ff1,127.0.0.1,GET,https://127.0.0.1:8000/recipe/new,1731353015,,200,request
