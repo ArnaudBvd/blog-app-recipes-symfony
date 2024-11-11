@@ -7,11 +7,14 @@ use App\Form\RecipeType;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormError;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[Route('/recipe')]
 final class RecipeController extends AbstractController
@@ -42,7 +45,7 @@ final class RecipeController extends AbstractController
 
     #[IsGranted("ROLE_USER")]
     #[Route('/new', name: 'app_recipe_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
         $recipe = new Recipe();
 
@@ -52,10 +55,37 @@ final class RecipeController extends AbstractController
             $recipe->setUser($user);
         }
 
+        // Création du formulaire
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $picture = $form->get('picture')->getData();
+
+            // Vérification si une image a bien été téléchargée
+            if(is_null($picture)){
+                $error= new FormError(message: "Veuillez télécharger une image au format PNG, JPEG ou WEBP");
+                $form->get('picture')->addError($error);
+            } else {
+                // Traitement du fichier image
+                $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$picture->guessExtension();
+
+                try {
+                    // Déplacement de l'image dans le répertoire spécifique
+                    $picture->move(
+                        $this->getParameter('recipe_picture_directory'),
+                        $newFilename
+                    );
+
+                    // Assignation du nom de fichier à l'entité
+                    $recipe->setPicture($newFilename);
+                } catch (FileException $e) {
+
+                }
+            }
+
             $entityManager->persist($recipe);
             $entityManager->flush();
 
