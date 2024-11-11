@@ -13,7 +13,7 @@
 
 			{% if app.user is not null %}
 				<li>
-					<a href="#">Mes recettes</a>
+					<a href="{{ path('app_myrecipes', {'id': app.user.id}) }}">Mes recettes</a>
 				</li>
 			{% endif %}
 
