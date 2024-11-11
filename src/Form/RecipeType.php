@@ -7,11 +7,13 @@ use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class RecipeType extends AbstractType
 {
@@ -70,7 +72,22 @@ class RecipeType extends AbstractType
                 'label' => 'Date de création :',
                 'widget' => 'single_text',
             ])
-            ->add('picture')
+            ->add('picture', FileType::class, [
+                'label' => 'Photo de la recette :',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/png',
+                            'image/jpeg',
+                            'image/webp',
+                        ],
+                        'mimeTypesMessage' => 'Veuille télécharger une photo au format JPG, PNG ou WEBP'
+                    ])
+                ]
+            ])
 
         ;
     }
