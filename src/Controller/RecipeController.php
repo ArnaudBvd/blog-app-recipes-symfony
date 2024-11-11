@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/recipe')]
 final class RecipeController extends AbstractController
@@ -22,6 +23,23 @@ final class RecipeController extends AbstractController
         ]);
     }
 
+    #[IsGranted("ROLE_USER")]
+    #[Route('/user{id}/myrecipes', name: 'app_myrecipes', methods: ['GET'])]
+    public function myRecipes(RecipeRepository $recipeRepository): Response
+    {
+        // Récupérer l'utilisateur connecté
+        $user = $this->getUser();
+        
+
+        // Récupérer les recettes de l'utilisateur connecté
+        $recipes = $recipeRepository->findBy(['user' => $user]);
+
+        return $this->render('recipe/myrecipes.html.twig', [
+            'recipes' => $recipes,
+        ]);
+    }
+
+    #[IsGranted("ROLE_USER")]
     #[Route('/new', name: 'app_recipe_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -50,6 +68,7 @@ final class RecipeController extends AbstractController
         ]);
     }
 
+    #[IsGranted("ROLE_USER")]
     #[Route('/{id}/edit', name: 'app_recipe_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Recipe $recipe, EntityManagerInterface $entityManager): Response
     {
@@ -68,6 +87,7 @@ final class RecipeController extends AbstractController
         ]);
     }
 
+    #[IsGranted("ROLE_USER")]
     #[Route('/{id}', name: 'app_recipe_delete', methods: ['POST'])]
     public function delete(Request $request, Recipe $recipe, EntityManagerInterface $entityManager): Response
     {
