@@ -16,38 +16,43 @@
 				<p>Chaque recette créée peut ensuite être consultée, modifiée ou supprimée.</p>
 			</div>
 
-			<a href="{{ path('app_recipe_new') }}">Ajouter une recette</a>
+			<a href="{{ path('app_recipe_new') }}" class="btn__add-new">Ajouter une recette</a>
 
-			<table
-				class="table">
-				{# <thead>
-												<tr>
-													<th>Nom</th>
-													<th>Temps de cuisson</th>
-													<th>Temps de préparation</th>
-													<th>Nombre de parts</th>
-													<th>Difficulté</th>
-													<th>Catégorie</th>
-													<th>Créée le</th>
-													<th>Photo</th>
-													<th>Actions</th>
-												</tr>
-											</thead> #}
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Catégorie</th>
+						<th>Difficulté</th>
+						<th>Créée le</th>
+						<th>Photo</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
 				<tbody>
 					{% for recipe in recipes %}
 						<tr>
-							<td>{{ recipe.title }}</td>
-							<td>{{ recipe.difficulty }}</td>
-							<td>{{ recipe.category }}</td>
+							<td>{{ recipe.title|capitalize }}</td>
+							<td>{{ recipe.category|capitalize }}</td>
+							<td>{{ recipe.difficulty|capitalize }}</td>
 							<td>{{ recipe.createdAt ? recipe.createdAt|date('d/m/Y') : '' }}</td>
 							<td>
-								<img src="{{ asset('uploads/recipe/'~ recipe.picture) }}" alt="{{recipe.title}}" class="recipe__picture-list">
+								<div class="picture__list">
+									<img src="{{ asset('uploads/recipe/'~ recipe.picture) }}" alt="{{recipe.title}}" class="recipe__picture-list">
+								</div>
 							</td>
 							<td class="actions">
-								<a href="{{ path('app_recipe_show', {'id': recipe.id}) }}">{{ ux_icon('healthicons:magnifying-glass') }}</a>
-								<a href="{{ path('app_recipe_edit', {'id': recipe.id}) }}">{{ ux_icon('line-md:edit') }}</a>
-								<a href="{{ path('app_recipe_delete', {'id': recipe.id}) }}">{{ ux_icon('weui:delete-filled') }}</a>
+								<div class="action-item">
+									<a href="{{ path('app_recipe_show', {'id': recipe.id}) }}" class="action-show" title="Voir la recette">{{ ux_icon('healthicons:magnifying-glass') }} </a>
+								</div>
+								<div class="action-item">
+									<a href="{{ path('app_recipe_edit', {'id': recipe.id}) }}" class="action-edit" title="Modifier la recette">{{ ux_icon('iconamoon:edit') }}</a>
+								</div>
+								<div class="action-item">
+									<a href="{{ path('app_recipe_delete', {'id': recipe.id}) }}" class="action-delete" title="Supprimer la recette">{{ ux_icon('weui:delete-filled') }}</a>
+								</div>
 							</td>
+
 						</tr>
 					{% else %}
 						<h2>Vous n'avez pas encore de recette...</h2>
