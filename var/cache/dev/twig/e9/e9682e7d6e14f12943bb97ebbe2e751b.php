@@ -73,7 +73,8 @@ class __TwigTemplate_7bae887dbee00eb82811f735d5167a50 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Recipe index";
+        yield "Liste de recettes
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_7bae887dbee00eb82811f735d5167a50 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,106 +97,111 @@ class __TwigTemplate_7bae887dbee00eb82811f735d5167a50 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        yield "    <h1>Recipe index</h1>
+        // line 7
+        yield "\t<section class=\"myrecipes\">
+\t\t<div class=\"container\">
+\t\t\t<h1>Bienvenue
+\t\t\t\t";
+        // line 10
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10), "firstname", [], "any", false, false, false, 10), "html", null, true);
+        yield "
+\t\t\t\tsur votre liste de recettes</h1>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Cooking_time</th>
-                <th>Preparation_time</th>
-                <th>Serving</th>
-                <th>Difficulty</th>
-                <th>Category</th>
-                <th>Created_at</th>
-                <th>Picture</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 25
+\t\t\t<div class=\"intro__myrecipes\">
+\t\t\t\t<p>C'est ici que vous retrouvez toutes vos recettes.</p>
+\t\t\t\t<p>Pour ajouter une recette, il vous suffit de cliquer sur le bouton \"Ajouter une recette\" et de remplir le formulaire.</p>
+\t\t\t\t<p>Chaque recette créée peut ensuite être consultée, modifiée ou supprimée.</p>
+\t\t\t</div>
+
+\t\t\t<a href=\"";
+        // line 19
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recipe_new");
+        yield "\">Ajouter une recette</a>
+
+\t\t\t<table
+\t\t\t\tclass=\"table\">
+\t\t\t\t";
+        // line 36
+        yield "\t\t\t\t<tbody>
+\t\t\t\t\t";
+        // line 37
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 25, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 37, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["recipe"]) {
-            // line 26
-            yield "            <tr>
-                <td>";
-            // line 27
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 27), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "title", [], "any", false, false, false, 28), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 29
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "description", [], "any", false, false, false, 29), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 30
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "cookingTime", [], "any", false, false, false, 30), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 31
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "preparationTime", [], "any", false, false, false, 31), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 32
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "serving", [], "any", false, false, false, 32), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 33
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "difficulty", [], "any", false, false, false, 33), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 34
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "category", [], "any", false, false, false, 34), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 35
-            ((CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "createdAt", [], "any", false, false, false, 35)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "createdAt", [], "any", false, false, false, 35), "Y-m-d H:i:s"), "html", null, true)) : (yield ""));
-            yield "</td>
-                <td>";
-            // line 36
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "picture", [], "any", false, false, false, 36), "html", null, true);
-            yield "</td>
-                <td>
-                    <a href=\"";
             // line 38
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recipe_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 38)]), "html", null, true);
-            yield "\">show</a>
-                    <a href=\"";
+            yield "\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t<td>";
             // line 39
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recipe_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 39)]), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 39), "html", null, true);
+            yield "</td>
+\t\t\t\t\t\t\t<td>";
+            // line 40
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "title", [], "any", false, false, false, 40), "html", null, true);
+            yield "</td>
+\t\t\t\t\t\t\t<td>";
+            // line 41
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "description", [], "any", false, false, false, 41), "html", null, true);
+            yield "</td>
+\t\t\t\t\t\t\t<td>";
+            // line 42
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "cookingTime", [], "any", false, false, false, 42), "html", null, true);
+            yield "</td>
+\t\t\t\t\t\t\t<td>";
+            // line 43
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "preparationTime", [], "any", false, false, false, 43), "html", null, true);
+            yield "</td>
+\t\t\t\t\t\t\t<td>";
+            // line 44
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "serving", [], "any", false, false, false, 44), "html", null, true);
+            yield "</td>
+\t\t\t\t\t\t\t<td>";
+            // line 45
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "difficulty", [], "any", false, false, false, 45), "html", null, true);
+            yield "</td>
+\t\t\t\t\t\t\t<td>";
+            // line 46
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "category", [], "any", false, false, false, 46), "html", null, true);
+            yield "</td>
+\t\t\t\t\t\t\t<td>";
+            // line 47
+            ((CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "createdAt", [], "any", false, false, false, 47)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "createdAt", [], "any", false, false, false, 47), "Y-m-d H:i:s"), "html", null, true)) : (yield ""));
+            yield "</td>
+\t\t\t\t\t\t\t<td>";
+            // line 48
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "picture", [], "any", false, false, false, 48), "html", null, true);
+            yield "</td>
+\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t<a href=\"";
+            // line 50
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recipe_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 50)]), "html", null, true);
+            yield "\">show</a>
+\t\t\t\t\t\t\t\t<a href=\"";
+            // line 51
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recipe_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 51)]), "html", null, true);
             yield "\">edit</a>
-                </td>
-            </tr>
-        ";
+\t\t\t\t\t\t\t\t<a href=\"";
+            // line 52
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recipe_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 52)]), "html", null, true);
+            yield "\">delete</a>
+\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t</tr>
+\t\t\t\t\t";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 43
-            yield "            <tr>
-                <td colspan=\"11\">no records found</td>
-            </tr>
-        ";
+            // line 56
+            yield "\t\t\t\t\t\t<h2>Vous n'avez pas encore de recette...</h2>
+\t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['recipe'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
-        yield "        </tbody>
-    </table>
-
-    <a href=\"";
-        // line 50
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recipe_new");
-        yield "\">Create new</a>
+        // line 58
+        yield "\t\t\t\t</tbody>
+\t\t\t</table>
+\t\t</div>
+\t</section>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -227,61 +233,72 @@ class __TwigTemplate_7bae887dbee00eb82811f735d5167a50 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  197 => 50,  192 => 47,  183 => 43,  174 => 39,  170 => 38,  165 => 36,  161 => 35,  157 => 34,  153 => 33,  149 => 32,  145 => 31,  141 => 30,  137 => 29,  133 => 28,  129 => 27,  126 => 26,  121 => 25,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  201 => 58,  194 => 56,  185 => 52,  181 => 51,  177 => 50,  172 => 48,  168 => 47,  164 => 46,  160 => 45,  156 => 44,  152 => 43,  148 => 42,  144 => 41,  140 => 40,  136 => 39,  133 => 38,  128 => 37,  125 => 36,  118 => 19,  106 => 10,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Recipe index{% endblock %}
+{% block title %}Liste de recettes
+{% endblock %}
 
 {% block body %}
-    <h1>Recipe index</h1>
+\t<section class=\"myrecipes\">
+\t\t<div class=\"container\">
+\t\t\t<h1>Bienvenue
+\t\t\t\t{{app.user.firstname}}
+\t\t\t\tsur votre liste de recettes</h1>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Cooking_time</th>
-                <th>Preparation_time</th>
-                <th>Serving</th>
-                <th>Difficulty</th>
-                <th>Category</th>
-                <th>Created_at</th>
-                <th>Picture</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for recipe in recipes %}
-            <tr>
-                <td>{{ recipe.id }}</td>
-                <td>{{ recipe.title }}</td>
-                <td>{{ recipe.description }}</td>
-                <td>{{ recipe.cookingTime }}</td>
-                <td>{{ recipe.preparationTime }}</td>
-                <td>{{ recipe.serving }}</td>
-                <td>{{ recipe.difficulty }}</td>
-                <td>{{ recipe.category }}</td>
-                <td>{{ recipe.createdAt ? recipe.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ recipe.picture }}</td>
-                <td>
-                    <a href=\"{{ path('app_recipe_show', {'id': recipe.id}) }}\">show</a>
-                    <a href=\"{{ path('app_recipe_edit', {'id': recipe.id}) }}\">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"11\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+\t\t\t<div class=\"intro__myrecipes\">
+\t\t\t\t<p>C'est ici que vous retrouvez toutes vos recettes.</p>
+\t\t\t\t<p>Pour ajouter une recette, il vous suffit de cliquer sur le bouton \"Ajouter une recette\" et de remplir le formulaire.</p>
+\t\t\t\t<p>Chaque recette créée peut ensuite être consultée, modifiée ou supprimée.</p>
+\t\t\t</div>
 
-    <a href=\"{{ path('app_recipe_new') }}\">Create new</a>
+\t\t\t<a href=\"{{ path('app_recipe_new') }}\">Ajouter une recette</a>
+
+\t\t\t<table
+\t\t\t\tclass=\"table\">
+\t\t\t\t{# <thead>
+\t\t\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t\t\t<th>Nom</th>
+\t\t\t\t\t\t\t\t\t<th>Temps de cuisson</th>
+\t\t\t\t\t\t\t\t\t<th>Temps de préparation</th>
+\t\t\t\t\t\t\t\t\t<th>Nombre de parts</th>
+\t\t\t\t\t\t\t\t\t<th>Difficulté</th>
+\t\t\t\t\t\t\t\t\t<th>Catégorie</th>
+\t\t\t\t\t\t\t\t\t<th>Créée le</th>
+\t\t\t\t\t\t\t\t\t<th>Photo</th>
+\t\t\t\t\t\t\t\t\t<th>Actions</th>
+\t\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t\t</thead> #}
+\t\t\t\t<tbody>
+\t\t\t\t\t{% for recipe in recipes %}
+\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t<td>{{ recipe.id }}</td>
+\t\t\t\t\t\t\t<td>{{ recipe.title }}</td>
+\t\t\t\t\t\t\t<td>{{ recipe.description }}</td>
+\t\t\t\t\t\t\t<td>{{ recipe.cookingTime }}</td>
+\t\t\t\t\t\t\t<td>{{ recipe.preparationTime }}</td>
+\t\t\t\t\t\t\t<td>{{ recipe.serving }}</td>
+\t\t\t\t\t\t\t<td>{{ recipe.difficulty }}</td>
+\t\t\t\t\t\t\t<td>{{ recipe.category }}</td>
+\t\t\t\t\t\t\t<td>{{ recipe.createdAt ? recipe.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+\t\t\t\t\t\t\t<td>{{ recipe.picture }}</td>
+\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t<a href=\"{{ path('app_recipe_show', {'id': recipe.id}) }}\">show</a>
+\t\t\t\t\t\t\t\t<a href=\"{{ path('app_recipe_edit', {'id': recipe.id}) }}\">edit</a>
+\t\t\t\t\t\t\t\t<a href=\"{{ path('app_recipe_delete', {'id': recipe.id}) }}\">delete</a>
+\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t</tr>
+\t\t\t\t\t{% else %}
+\t\t\t\t\t\t<h2>Vous n'avez pas encore de recette...</h2>
+\t\t\t\t\t{% endfor %}
+\t\t\t\t</tbody>
+\t\t\t</table>
+\t\t</div>
+\t</section>
 {% endblock %}
 ", "recipe/myrecipes.html.twig", "C:\\Users\\a-bra\\OneDrive\\Bureau\\blog-app-recipes-symfony\\templates\\recipe\\myrecipes.html.twig");
     }
