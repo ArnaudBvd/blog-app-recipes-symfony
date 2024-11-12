@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerFAnxulb\App_KernelDevDebugContainer([
     'container.build_hash' => 'FAnxulb',
-    'container.build_id' => 'f8f102e3',
-    'container.build_time' => 1731413529,
+    'container.build_id' => '008887ba',
+    'container.build_time' => 1731413910,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerFAnxulb');
