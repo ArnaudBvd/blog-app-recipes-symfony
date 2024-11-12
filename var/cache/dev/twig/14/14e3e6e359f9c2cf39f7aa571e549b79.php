@@ -161,7 +161,7 @@ class __TwigTemplate_f3f2b476612692569c422f7a23244aa9 extends Template
 \t\t\t\t<div class=\"link__form link__register\">
 \t\t\t\t\t<a href=\"";
         // line 35
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recipe_index");
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_myrecipes", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35), "id", [], "any", false, false, false, 35)]), "html", null, true);
         yield "\">Retour à votre liste de recette</a>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -239,7 +239,7 @@ class __TwigTemplate_f3f2b476612692569c422f7a23244aa9 extends Template
 \t\t\t\t{{ form_end(form) }}
 
 \t\t\t\t<div class=\"link__form link__register\">
-\t\t\t\t\t<a href=\"{{ path('app_recipe_index') }}\">Retour à votre liste de recette</a>
+\t\t\t\t\t<a href=\"{{ path('app_myrecipes', {'id': app.user.id}) }}\">Retour à votre liste de recette</a>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>

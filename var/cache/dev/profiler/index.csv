@@ -167,3 +167,13 @@ b9d2e4,127.0.0.1,GET,https://127.0.0.1:8000/recipe/user1/myrecipes,1731411849,,2
 75c907,127.0.0.1,GET,https://127.0.0.1:8000/recipe/user1/myrecipes,1731411871,,200,request
 751816,127.0.0.1,GET,https://127.0.0.1:8000/recipe/user1/myrecipes,1731412003,,200,request
 9d4b42,127.0.0.1,GET,https://127.0.0.1:8000/recipe/user1/myrecipes,1731413167,,200,request
+b5f7ec,127.0.0.1,GET,https://127.0.0.1:8000/recipe/new,1731413295,1232a8,500,request
+1232a8,127.0.0.1,GET,https://127.0.0.1:8000/recipe/new,1731413295,,500,request
+8ab35d,127.0.0.1,GET,https://127.0.0.1:8000/recipe/user1/myrecipes,1731413306,,200,request
+46e4cb,127.0.0.1,GET,https://127.0.0.1:8000/recipe/user1/myrecipes,1731413307,,200,request
+2a1b2c,127.0.0.1,GET,https://127.0.0.1:8000/recipe/new,1731413309,bf7b83,500,request
+bf7b83,127.0.0.1,GET,https://127.0.0.1:8000/recipe/new,1731413309,,500,request
+b7ca03,127.0.0.1,GET,https://127.0.0.1:8000/recipe/new,1731413339,,200,request
+21ecdc,127.0.0.1,GET,https://127.0.0.1:8000/recipe/user1/myrecipes,1731413343,,200,request
+4aa16f,127.0.0.1,GET,https://127.0.0.1:8000/recipe/new,1731413347,,200,request
+a40ed6,127.0.0.1,GET,https://127.0.0.1:8000/recipe/user1/myrecipes,1731413351,,200,request

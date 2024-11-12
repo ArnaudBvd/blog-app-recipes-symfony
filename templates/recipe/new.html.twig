@@ -32,7 +32,7 @@
 				{{ form_end(form) }}
 
 				<div class="link__form link__register">
-					<a href="{{ path('app_recipe_index') }}">Retour à votre liste de recette</a>
+					<a href="{{ path('app_myrecipes', {'id': app.user.id}) }}">Retour à votre liste de recette</a>
 				</div>
 			</div>
 		</div>
