@@ -45,6 +45,7 @@ class ComposerStaticInit3c7b26c5dad9ba6444caa0b5029e30c0
         array (
             'Symfony\\UX\\Turbo\\' => 17,
             'Symfony\\UX\\StimulusBundle\\' => 26,
+            'Symfony\\UX\\Icons\\' => 17,
             'Symfony\\Runtime\\Symfony\\Component\\' => 34,
             'Symfony\\Polyfill\\Php83\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -171,8 +172,8 @@ class ComposerStaticInit3c7b26c5dad9ba6444caa0b5029e30c0
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -193,6 +194,10 @@ class ComposerStaticInit3c7b26c5dad9ba6444caa0b5029e30c0
         'Symfony\\UX\\StimulusBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/stimulus-bundle/src',
+        ),
+        'Symfony\\UX\\Icons\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/ux-icons/src',
         ),
         'Symfony\\Runtime\\Symfony\\Component\\' => 
         array (

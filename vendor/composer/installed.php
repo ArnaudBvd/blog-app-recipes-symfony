@@ -3,7 +3,7 @@
         'name' => 'symfony/skeleton',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '8f65269272de57e95f801c93d0597f75f1fa5c93',
+        'reference' => '1f9d12dafd634e805dc67a4ca5b58946c8b1a8c2',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -421,8 +421,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache-implementation' => array(
@@ -1163,7 +1163,7 @@
         'symfony/skeleton' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '8f65269272de57e95f801c93d0597f75f1fa5c93',
+            'reference' => '1f9d12dafd634e805dc67a4ca5b58946c8b1a8c2',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1244,6 +1244,15 @@
             'reference' => 'a13032128c307470955c45c99201349b15cd7f4a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/type-info',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/ux-icons' => array(
+            'pretty_version' => 'v2.21.0',
+            'version' => '2.21.0.0',
+            'reference' => 'c3b3fd29b3f90e977b267251ef15ea06f3cec553',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/ux-icons',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
