@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Recipe;
+use App\Entity\User;
 use App\Form\RecipeType;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -33,7 +34,7 @@ final class RecipeController extends AbstractController
     {
         // Récupérer l'utilisateur connecté
         $user = $this->getUser();
-        
+
 
         // Récupérer les recettes de l'utilisateur connecté
         $recipes = $recipeRepository->findBy(['user' => $user]);
@@ -63,14 +64,14 @@ final class RecipeController extends AbstractController
             $picture = $form->get('picture')->getData();
 
             // Vérification si une image a bien été téléchargée
-            if(is_null($picture)){
-                $error= new FormError(message: "Veuillez télécharger une image au format PNG, JPEG ou WEBP");
+            if (is_null($picture)) {
+                $error = new FormError(message: "Veuillez télécharger une image au format PNG, JPEG ou WEBP");
                 $form->get('picture')->addError($error);
             } else {
                 // Traitement du fichier image
                 $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$picture->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $picture->guessExtension();
 
                 try {
                     // Déplacement de l'image dans le répertoire spécifique
@@ -82,7 +83,6 @@ final class RecipeController extends AbstractController
                     // Assignation du nom de fichier à l'entité
                     $recipe->setPicture($newFilename);
                 } catch (FileException $e) {
-
                 }
             }
 
@@ -127,13 +127,33 @@ final class RecipeController extends AbstractController
 
     #[IsGranted("ROLE_USER")]
     #[Route('/{id}', name: 'app_recipe_delete', methods: ['POST'])]
-    public function delete(Request $request, Recipe $recipe, EntityManagerInterface $entityManager): Response
+    public function delete(Request $request, Recipe $recipe, EntityManagerInterface $entityManager, RecipeRepository $recipeRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$recipe->getId(), $request->getPayload()->getString('_token'))) {
+        // Vérifier si l'utilisateur est le propriétaire de la recette
+        $user = $this->getUser();
+
+        // Vérification si l'utilisateur connecté est bien une instance de User
+        if (!$user instanceof User) {
+            throw $this->createAccessDeniedException('Utilisateur non valide');
+        }
+
+        // Vérifier si l'utilisateur est le propriétaire de la recette
+        if ($recipe->getUser() !== $user) {
+            throw $this->createAccessDeniedException('Vous n\'êtes pas autorisé à supprimer cette recette.');
+        }
+
+        // Vérifier le token CSRF
+        if ($this->isCsrfTokenValid('delete' . $recipe->getId(), $request->get('_token'))) {
             $entityManager->remove($recipe);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_recipe_index', [], Response::HTTP_SEE_OTHER);
+        // Récupérer toutes les recettes de l'utilisateur connecté
+        $recipes = $recipeRepository->findBy(['user' => $user]);
+
+        // Rediriger vers la page des recettes de l'utilisateur
+        return $this->redirectToRoute('app_myrecipes', [
+            'id' => $user->getId(), // Passer l'ID de l'utilisateur ici
+        ], Response::HTTP_SEE_OTHER);
     }
 }
