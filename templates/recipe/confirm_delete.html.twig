@@ -8,10 +8,13 @@
 		<h1>Êtes-vous sûr de vouloir supprimer cette recette ?</h1>
 
 		<div class="delete__title">
-        <img src="{{ asset('uploads/recipe/'~ recipe.picture) }}" alt="Photo de la recette {{recipe.title}} ">
-			<h2>
-				{{recipe.title}}
-			</h2>
+			<div>
+				<img src="{{ asset('uploads/recipe/'~ recipe.picture) }}" alt="Photo de la recette {{recipe.title}} ">
+
+				<h2>
+					{{recipe.title}}
+				</h2>
+			</div>
 		</div>
 
 		<p class="warning">Une fois que vous supprimez une recette, il n'est plus possible de revenir en arrière. Soyez-en sûr, s'il vous plaît.</p>
