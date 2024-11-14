@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation de suppression
+{% endblock %}
+
+{% block body %}
+	<section class="delete">
+		<h1>Êtes-vous sûr de vouloir supprimer cette recette ?</h1>
+
+		<div class="delete__title">
+        <img src="{{ asset('uploads/recipe/'~ recipe.picture) }}" alt="Photo de la recette {{recipe.title}} ">
+			<h2>
+				{{recipe.title}}
+			</h2>
+		</div>
+
+		<p class="warning">Une fois que vous supprimez une recette, il n'est plus possible de revenir en arrière. Soyez-en sûr, s'il vous plaît.</p>
+
+		<div class="confirm__delete">
+			<form method="post" action="{{ path('app_recipe_delete', {id: recipe.id}) }}">
+				<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ recipe.id) }}">
+
+				<button type="submit" class="btn-danger">Confirmer la suppression</button>
+				<a href="{{ path('app_myrecipes', {'id': app.user.id}) }}" class="cancel__link">Annuler</a>
+			</form>
+		</div>
+
+	</section>
+{% endblock %}
