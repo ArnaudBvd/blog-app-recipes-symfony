@@ -126,6 +126,16 @@ final class RecipeController extends AbstractController
     }
 
     #[IsGranted("ROLE_USER")]
+    #[Route('/{id}/confirm-delete', name: 'app_confirm_delete', methods: ['GET'])]
+    public function confirmDelete(Recipe $recipe): Response
+    {
+
+        return $this->render('recipe/confirm_delete.html.twig', [
+            'recipe' => $recipe,
+        ]);
+    }
+
+    #[IsGranted("ROLE_USER")]
     #[Route('/{id}', name: 'app_recipe_delete', methods: ['POST'])]
     public function delete(Request $request, Recipe $recipe, EntityManagerInterface $entityManager, RecipeRepository $recipeRepository): Response
     {
